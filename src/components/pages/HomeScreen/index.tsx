@@ -29,7 +29,14 @@ const HomeScreen = () => {
               style={styles.loading}
             />
           ) : (
-            <CardHotel data={detailHotelData} onPress={() => {}} />
+            <CardHotel
+              data={detailHotelData}
+              onPress={() => {
+                navigateScreen<DetailScreenParams>('DetailScreen', {
+                  dataHotel: detailHotelData,
+                });
+              }}
+            />
           )}
         </View>
       </View>
