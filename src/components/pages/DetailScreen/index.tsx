@@ -14,15 +14,8 @@ import {styles} from './styles';
 import useDetailScreen from './useDetailScreen';
 
 const DetailScreen = () => {
-  const {
-    navigation,
-    navigateScreen,
-    dataHotel,
-    index,
-    setIndex,
-    showMoreFacilities,
-    setShowMoreFacilities,
-  } = useDetailScreen();
+  const {navigation, navigateScreen, dataHotel, detail, index, setIndex} =
+    useDetailScreen();
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -39,7 +32,7 @@ const DetailScreen = () => {
               loop
               sliderWidth={windowWidth - 32}
               itemWidth={windowWidth - 32}
-              data={dataHotel?.chosen_hotel_detail?.images ?? []}
+              data={detail?.images ?? []}
               onSnapToItem={index => setIndex(index)}
               renderItem={({item}) => {
                 return (
@@ -49,7 +42,7 @@ const DetailScreen = () => {
             />
             <View style={styles.dotContainer}>
               <Pagination
-                dotsLength={dataHotel?.chosen_hotel_detail?.images?.length ?? 0}
+                dotsLength={detail?.images?.length ?? 0}
                 activeDotIndex={index}
                 dotStyle={styles.dot}
                 inactiveDotOpacity={0.4}
@@ -58,26 +51,24 @@ const DetailScreen = () => {
             </View>
           </View>
           <View style={styles.detailContainer}>
-            <Text style={styles.title}>
-              {dataHotel?.chosen_hotel_detail?.hotel_name}
-            </Text>
+            <Text style={styles.title}>{detail?.hotel_name}</Text>
             <View style={[globalStyles.flexRow, {marginVertical: 4}]}>
               <Icon source={'star'} size={20} color={Colors.yellow} />
               <Text style={styles.detailStar}>
-                {dataHotel?.chosen_hotel_detail?.star}
+                {detail?.star}
                 <Text style={{fontSize: 10}}>/5</Text>
               </Text>
               <Text style={{color: Colors.primary.base}}>
                 {' '}
-                • {dataHotel?.chosen_hotel_detail?.region_hotel}
+                • {detail?.region_hotel}
               </Text>
             </View>
-            <Text>{dataHotel?.chosen_hotel_detail?.address}</Text>
+            <Text>{detail?.address}</Text>
             <Text style={styles.header}>Facilities</Text>
             <FlatList
               nestedScrollEnabled
               numColumns={3}
-              data={dataHotel?.chosen_hotel_detail?.facilities}
+              data={detail?.facilities}
               renderItem={({item}) => {
                 return (
                   <View style={styles.detailFacilityContainer}>
@@ -92,9 +83,7 @@ const DetailScreen = () => {
               }}
             />
             <Text style={styles.header}>Description</Text>
-            <Text>
-              {dataHotel?.chosen_hotel_detail?.descriptions?.[0]?.description}
-            </Text>
+            <Text>{detail?.descriptions?.[0]?.description}</Text>
             <Spacer height={100} />
           </View>
         </View>
@@ -118,7 +107,16 @@ const DetailScreen = () => {
           </View>
         </View>
 
-        <Button label="Book Hotel" action={() => {}} />
+        <Button
+          label="Book Hotel"
+          action={() => {
+            navigateScreen<PaymentScreenParams>('PaymentScreen', {
+              hotelImg: detail?.images?.[0]?.url,
+              hotelName: detail?.hotel_name,
+              hotelRegion: detail?.region_hotel,
+            });
+          }}
+        />
       </View>
     </View>
   );

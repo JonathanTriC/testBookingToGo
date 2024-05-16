@@ -5,16 +5,15 @@ const useDetailScreen = () => {
   const {navigation, navigateScreen, getRouteParams} = useNavigate();
   const {dataHotel} = getRouteParams<DetailScreenParams>();
   const [index, setIndex] = useState(0);
-  const [showMoreFacilities, setShowMoreFacilities] = useState<boolean>(false);
+  const detail = dataHotel?.chosen_hotel_detail;
 
   return {
     navigation,
     navigateScreen,
     dataHotel,
+    detail,
     index,
     setIndex,
-    showMoreFacilities,
-    setShowMoreFacilities,
   };
 };
 
