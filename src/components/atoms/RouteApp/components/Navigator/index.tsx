@@ -3,6 +3,7 @@ import {
   HomeScreen,
   PaymentScreen,
   SplashScreen,
+  SuccessScreen,
 } from '@components/pages';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
@@ -25,6 +26,7 @@ export const Navigator: React.FC<NavigatorProps> = () => {
       <Stack.Screen name={'HomeScreen'} component={HomeScreen} />
       <Stack.Screen name={'DetailScreen'} component={DetailScreen} />
       <Stack.Screen name={'PaymentScreen'} component={PaymentScreen} />
+      <Stack.Screen name={'SuccessScreen'} component={SuccessScreen} />
     </Stack.Navigator>
   );
 };

@@ -155,7 +155,10 @@ const PaymentScreen = () => {
         </ScrollView>
 
         <View style={styles.payNowBtn}>
-          <Button label="Pay Now" />
+          <Button
+            label="Pay Now"
+            action={() => navigateScreen('SuccessScreen')}
+          />
         </View>
       </View>
 

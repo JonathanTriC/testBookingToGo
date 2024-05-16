@@ -1,5 +1,6 @@
 interface SplashScreenParams {}
 interface HomeScreenParams {}
+interface SuccessScreenParams {}
 interface DetailScreenParams {
   dataHotel?: IDetailHotel;
 }
@@ -15,4 +16,5 @@ type ParamList = {
   HomeScreen: HomeScreenParams;
   DetailScreen: DetailScreenParams;
   PaymentScreen: PaymentScreenParams;
+  SuccessScreen: SuccessScreenParams;
 };
