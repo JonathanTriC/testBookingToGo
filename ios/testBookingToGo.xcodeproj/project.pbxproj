@@ -15,6 +15,7 @@
 		3AD94B6828EB05551D005DA9 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 6A3BFF24FF2F99AB42486EB9 /* PrivacyInfo.xcprivacy */; };
 		7699B88040F8A987B510C191 /* libPods-testBookingToGo-testBookingToGoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-testBookingToGo-testBookingToGoTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		BBDFC2952BF59EA000879CE3 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BBDFC2942BF59E9F00879CE3 /* MaterialCommunityIcons.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		6A3BFF24FF2F99AB42486EB9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = testBookingToGo/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = testBookingToGo/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-testBookingToGo-testBookingToGoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testBookingToGo-testBookingToGoTests.release.xcconfig"; path = "Target Support Files/Pods-testBookingToGo-testBookingToGoTests/Pods-testBookingToGo-testBookingToGoTests.release.xcconfig"; sourceTree = "<group>"; };
+		BBDFC2942BF59E9F00879CE3 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialCommunityIcons.ttf; path = Resources/MaterialCommunityIcons.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -89,6 +91,7 @@
 		13B07FAE1A68108700A75B9A /* testBookingToGo */ = {
 			isa = PBXGroup;
 			children = (
+				BBDFC2932BF59E0F00879CE3 /* Resources */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -151,6 +154,14 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-testBookingToGo-testBookingToGoTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BBDFC2932BF59E0F00879CE3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BBDFC2942BF59E9F00879CE3 /* MaterialCommunityIcons.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +259,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				BBDFC2952BF59EA000879CE3 /* MaterialCommunityIcons.ttf in Resources */,
 				3AD94B6828EB05551D005DA9 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

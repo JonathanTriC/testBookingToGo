@@ -1,5 +1,6 @@
 import Colors from '@constants/colors';
 import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {StatusBar} from 'react-native';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import {Navigator} from './components';
@@ -13,15 +14,19 @@ const MyTheme = {
   },
 };
 
+const queryClient = new QueryClient();
+
 export const RouteApp = () => {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={styles.container}>
-        <StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
-        <NavigationContainer theme={MyTheme}>
-          <Navigator />
-        </NavigationContainer>
-      </SafeAreaView>
-    </SafeAreaProvider>
+    <QueryClientProvider client={queryClient}>
+      <SafeAreaProvider>
+        <SafeAreaView style={styles.container}>
+          <StatusBar barStyle={'dark-content'} backgroundColor={Colors.white} />
+          <NavigationContainer theme={MyTheme}>
+            <Navigator />
+          </NavigationContainer>
+        </SafeAreaView>
+      </SafeAreaProvider>
+    </QueryClientProvider>
   );
 };
