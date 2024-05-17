@@ -41,6 +41,7 @@ const GuestData = ({
             {label: 'Mr.', value: 'Mr.'},
             {label: 'Ms.', value: 'Ms.'},
           ]}
+          useNativeAndroidPickerStyle={false}
         />
       </View>
       <View style={[styles.formContainer, globalStyles.flex1]}>

@@ -54,6 +54,7 @@ const PersonalData = ({
                     {label: 'Mr.', value: 'Mr.'},
                     {label: 'Ms.', value: 'Ms.'},
                   ]}
+                  useNativeAndroidPickerStyle={false}
                 />
               </View>
               {error ? (
